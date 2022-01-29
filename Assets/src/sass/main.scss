@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../sass/components/_variables";
+@import "../sass/components/header/_nav";
+@import "../sass/components/body/hero";
+@import "../sass/components/body/main";
+@import "../sass/components/footer/_footer";
+@import "../sass/components/body";

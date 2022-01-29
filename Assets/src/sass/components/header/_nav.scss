@@ -1,0 +1,425 @@
+#site-content .main-overlay {
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(2px);
+  background: #fff;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 5;
+  transition: all 0.3s ease-in-out;
+  &.active {
+    opacity: 0.6;
+    visibility: visible;
+  }
+}
+header.container {
+  .header__topBar {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @media screen and (max-width: $md) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media screen and (max-width: $sm) {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    .desktop__socials {
+      width: 33.33%;
+      display: flex;
+      align-items: center;
+      a {
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        &:hover {
+          color: darken($orange, 5);
+        }
+      }
+      @media screen and (max-width: $md) {
+        display: none;
+      }
+    }
+    .logo__section {
+      width: 33.33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      @media screen and (max-width: $md) {
+        width: 50%;
+        flex: 1;
+        justify-content: flex-start;
+      }
+      img {
+        width: 80px;
+        height: 80px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 50%;
+        @media screen and (max-width: $md) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      h1 {
+        color: #203656;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: $jost;
+        line-height: 1;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        &:hover {
+          color: darken($orange, 5);
+        }
+        @media screen and (max-width: $md) {
+          font-size: 20px;
+        }
+      }
+      p {
+        color: #9faabb;
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+    .right__section {
+      width: 33.33%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @media screen and (max-width: $md) {
+        width: 50%;
+        flex: 1;
+      }
+      @media screen and (max-width: $sm) {
+        margin-right: 1rem;
+      }
+      .search {
+        width: 37px;
+        height: 37px;
+        border: 0;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        background-color: $gradient;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        line-height: 39px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: darken($gradient, 10);
+          color: lighten(#fff, 10);
+        }
+      }
+      .humburger {
+        width: 37px;
+        height: 37px;
+        border: 0;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        background-color: $gradient;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        line-height: 39px;
+        cursor: pointer;
+        margin-left: 0.5rem;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: darken($gradient, 10);
+          color: lighten(#fff, 10);
+        }
+      }
+    }
+  }
+}
+.canvas-menu {
+  background: #fff;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 40px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  z-index: 6;
+  box-shadow: -4px 0px 20px rgba(32, 54, 86, 0.2);
+  transform: translateX(350px);
+  transition: all 0.3s ease-in-out;
+  &.open {
+    transform: translateX(0);
+  }
+
+  .submenu {
+    display: none;
+    padding: 10px 20px;
+    li {
+      padding: 5px 0;
+      &::after {
+        content: "";
+        display: none;
+      }
+    }
+  }
+  .btn-close {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    padding: 0.25em 0.25em;
+    color: #000;
+    border: 0;
+    border-radius: 0.25rem;
+    opacity: 0.4;
+    right: 30px;
+    top: 20px;
+    transition: all 0.3s ease-in-out;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .logo {
+    margin-bottom: 80px;
+    margin-top: 50px;
+    width: 100%;
+    @media screen and (max-width: $md) {
+      margin-bottom: 60px;
+      margin-top: 30px;
+    }
+  }
+  nav {
+    width: 100%;
+  }
+  .vertical-menu {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    li {
+      padding: 0;
+      position: relative;
+      list-style: none;
+      transition: all 0.2s ease-in-out;
+      .switch {
+        border: 1px solid #ebebeb;
+        border-radius: 5px;
+        font-size: 10px;
+        display: inline-block;
+        padding: 10px;
+        line-height: 1;
+        cursor: pointer;
+        color: #ad1deb;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: rotate(0deg);
+        transition: all 0.2s ease-in-out;
+      }
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 100%;
+        background: #ebebeb;
+        background: linear-gradient(to right, #ebebeb 0%, transparent 100%);
+      }
+      &.active a {
+        color: #ad1deb;
+      }
+      &.active .submenu a {
+        color: #79889e;
+        &:hover {
+          color: #203656;
+        }
+      }
+      a {
+        color: #203656;
+        font-family: $lexend;
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration: none;
+        position: relative;
+      }
+    }
+
+    li.openmenu > a {
+      color: #203656;
+    }
+    li.openmenu .switch {
+      transform: rotate(180deg);
+    }
+  }
+  .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+  }
+  .list-inline {
+    padding-left: 0;
+    list-style: none;
+  }
+  .social-icons {
+    display: inline-block;
+    margin-left: 0;
+    li:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+    a {
+      font-size: 16px;
+      color: #203656;
+      &:hover {
+        color: #ad1deb;
+      }
+    }
+    .list-inline-item {
+      display: inline-block;
+    }
+    @media screen and (max-width: $md) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+.main__nav {
+  position: relative;
+  z-index: 1;
+  @media screen and (max-width: $sm) {
+    display: none;
+  }
+  .nav__bar {
+    max-width: 70%;
+    padding: 20px 0;
+    @media screen and (max-width: $md) {
+      max-width: 50%;
+      padding: 10px 0;
+    }
+    li.nav-item {
+      margin-right: 1rem;
+      position: relative;
+      @media screen and (max-width: $md) {
+        margin-right: 0.5rem;
+      }
+      a {
+        white-space: nowrap;
+        padding: 8px 20px;
+        font-size: 14px;
+        font-family: $lexend;
+        i {
+          position: absolute;
+          top: 36%;
+          right: 5%;
+          font-size: 10px;
+        }
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        &:hover {
+          color: darken($gradient, 10);
+        }
+      }
+      &:hover {
+        .dropdown-menu {
+          display: block;
+        }
+      }
+      .dropdown-menu {
+        min-width: 160px;
+        width: 100%;
+        position: absolute;
+        top: 30px;
+        display: none;
+        background-color: #fff;
+        &:after {
+          content: "";
+          display: block;
+          height: 0;
+          width: 0;
+          position: absolute;
+          top: -10px;
+          left: 25%;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 10px solid #fff;
+        }
+        li {
+          a.dropdown-item {
+            display: block;
+            width: 100%;
+            padding: 0.6rem 1.5rem;
+            clear: both;
+            font-weight: 400;
+            font-size: 13px;
+            color: #79889e;
+            text-align: inherit;
+            text-decoration: none;
+            white-space: nowrap;
+            background-color: white;
+            border: 0;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            &:hover {
+              color: $gradient;
+              transform: translateX(2px);
+              -webkit-transform: translateX(2px);
+              -moz-transform: translateX(2px);
+              -ms-transform: translateX(2px);
+              -o-transform: translateX(2px);
+            }
+          }
+        }
+      }
+    }
+    li.active .nav-link {
+      color: #fff;
+      background: #6a3093;
+      border-radius: 25px;
+      background-color: $gradient;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: darken($gradient, 10);
+        color: white;
+      }
+    }
+  }
+}

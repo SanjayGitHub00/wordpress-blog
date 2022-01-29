@@ -1,0 +1,38 @@
+footer {
+  .container {
+    .footer__section {
+      @media screen and(max-width:$lg) {
+        display: inline-block;
+        flex-direction: column;
+        margin-top: -3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .left__section {
+        font-size: 14px;
+        @media screen and(max-width:$lg) {
+          margin-bottom: 1.2rem;
+        }
+      }
+      .right__section {
+        @media screen and(max-width:$lg) {
+          margin-bottom: 1.2rem;
+          justify-content: center;
+        }
+        .footer__menu {
+          @media screen and(max-width:$lg) {
+            justify-content: center;
+          }
+          li {
+            font-size: 16px;
+            font-weight: normal;
+            font-family: $jost;
+          }
+          li:not(:last-child) {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
